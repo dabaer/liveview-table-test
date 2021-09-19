@@ -1,0 +1,137 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html {
+  font-family: Verdana;
+  font-size: 95%;
+}
+
+.phx-modal {
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(2px);
+}
+
+.phx-modal-content {
+  margin: 20px auto;
+  width: 500px;
+}
+
+.column-form button {
+  outline: none;
+  background: rgb(124, 124, 124);
+  border: none;
+  padding: 5px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.column-form button:hover {
+  cursor: pointer;
+  background: gray;
+}
+
+.column-form .fx {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.column-form form {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.column-form form label {
+  display: block;
+  flex-basis: 30%;
+  flex-grow: 1;
+  background: rgb(124, 124, 124);
+  padding: 5px;
+  color: white;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.column-form form label:hover {
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+table th {
+  border-bottom: 1px solid black;
+  padding: 5px;
+  font-size: 13px;
+  text-align: left;
+}
+
+.table th:has(i) {
+  background: rgb(100, 100, 206);
+}
+
+table td {
+  padding: 5px;
+  font-size: 14px;
+}
+
+table th:active {
+  background: rgb(100, 100, 206);
+}
+
+.draggable-ghost {
+  opacity: 0.75;
+  background: rgb(100, 100, 206);
+}

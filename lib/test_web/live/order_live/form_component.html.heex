@@ -1,0 +1,76 @@
+<div>
+  <h2><%= @title %></h2>
+
+  <.form
+    let={f}
+    for={@changeset}
+    id="order-form"
+    phx-target={@myself}
+    phx-change="validate"
+    phx-submit="save">
+  
+    <%= label f, :customer %>
+    <%= text_input f, :customer %>
+    <%= error_tag f, :customer %>
+  
+    <%= label f, :bol %>
+    <%= text_input f, :bol %>
+    <%= error_tag f, :bol %>
+  
+    <%= label f, :terms %>
+    <%= text_input f, :terms %>
+    <%= error_tag f, :terms %>
+  
+    <%= label f, :shipper %>
+    <%= text_input f, :shipper %>
+    <%= error_tag f, :shipper %>
+  
+    <%= label f, :pickup %>
+    <%= text_input f, :pickup %>
+    <%= error_tag f, :pickup %>
+  
+    <%= label f, :consignee %>
+    <%= text_input f, :consignee %>
+    <%= error_tag f, :consignee %>
+  
+    <%= label f, :delivery %>
+    <%= text_input f, :delivery %>
+    <%= error_tag f, :delivery %>
+  
+    <%= label f, :pu_date %>
+    <%= datetime_select f, :pu_date %>
+    <%= error_tag f, :pu_date %>
+  
+    <%= label f, :dl_date %>
+    <%= datetime_select f, :dl_date %>
+    <%= error_tag f, :dl_date %>
+  
+    <%= label f, :pu_dt_type %>
+    <%= text_input f, :pu_dt_type %>
+    <%= error_tag f, :pu_dt_type %>
+  
+    <%= label f, :dl_dt_type %>
+    <%= text_input f, :dl_dt_type %>
+    <%= error_tag f, :dl_dt_type %>
+  
+    <%= label f, :comment %>
+    <%= text_input f, :comment %>
+    <%= error_tag f, :comment %>
+  
+    <%= label f, :instruction %>
+    <%= text_input f, :instruction %>
+    <%= error_tag f, :instruction %>
+  
+    <%= label f, :cod %>
+    <%= number_input f, :cod, step: "any" %>
+    <%= error_tag f, :cod %>
+  
+    <%= label f, :dv %>
+    <%= number_input f, :dv, step: "any" %>
+    <%= error_tag f, :dv %>
+  
+    <div>
+      <%= submit "Save", phx_disable_with: "Saving..." %>
+    </div>
+  </.form>
+</div>

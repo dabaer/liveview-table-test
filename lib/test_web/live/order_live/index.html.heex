@@ -1,0 +1,48 @@
+<%= if @live_action in [:new, :edit] do %>
+  <%= live_modal TestWeb.OrderLive.FormComponent,
+    id: @order.id || :new,
+    title: @page_title,
+    action: @live_action,
+    order: @order,
+    return_to: Routes.order_index_path(@socket, :index) %>
+<% end %>
+
+<%= if @live_action in [:columns] do %>
+  <%= live_modal TestWeb.OrderLive.ColumnComponent,
+    id: :columns,
+    title: @page_title,
+    action: @live_action,
+    column_layout: @column_layout,
+    columns: @columns,
+    return_to: Routes.order_index_path(@socket, :index) %>
+<% end %>
+
+<section class="table-tools">
+  <%= live_patch "New", to: Routes.order_index_path(@socket, :new) %>
+  <%= live_patch "Columns", to: Routes.order_index_path(@socket, :columns) %>
+</section>
+
+<table>
+  <thead>
+    <tr id="order-sortable" class="dragarea" phx-hook="Drag">
+      <th></th>
+      <%= for column <- @column_layout.matrix do %>
+        <.header column={column} columns={@columns} dir={@dir} col={@col}></.header>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody id="orders">
+    <%= for order <- @orders do %>
+      <tr id={"order-#{order.id}"}>
+        <td></td>
+        <%= for column <- @column_layout.matrix do %>
+          <.field column={column} columns={@columns} order={order}></.field>
+        <% end %>
+
+        <td>
+          <span><%= live_patch "Edit", to: Routes.order_index_path(@socket, :edit, order) %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

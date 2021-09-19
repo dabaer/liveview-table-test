@@ -1,0 +1,92 @@
+<h1>Show Order</h1>
+
+<%= if @live_action in [:edit] do %>
+  <%= live_modal TestWeb.OrderLive.FormComponent,
+    id: @order.id,
+    title: @page_title,
+    action: @live_action,
+    order: @order,
+    return_to: Routes.order_show_path(@socket, :show, @order) %>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Customer:</strong>
+    <%= @order.customer %>
+  </li>
+
+  <li>
+    <strong>Bol:</strong>
+    <%= @order.bol %>
+  </li>
+
+  <li>
+    <strong>Terms:</strong>
+    <%= @order.terms %>
+  </li>
+
+  <li>
+    <strong>Shipper:</strong>
+    <%= @order.shipper %>
+  </li>
+
+  <li>
+    <strong>Pickup:</strong>
+    <%= @order.pickup %>
+  </li>
+
+  <li>
+    <strong>Consignee:</strong>
+    <%= @order.consignee %>
+  </li>
+
+  <li>
+    <strong>Delivery:</strong>
+    <%= @order.delivery %>
+  </li>
+
+  <li>
+    <strong>Pu date:</strong>
+    <%= @order.pu_date %>
+  </li>
+
+  <li>
+    <strong>Dl date:</strong>
+    <%= @order.dl_date %>
+  </li>
+
+  <li>
+    <strong>Pu dt type:</strong>
+    <%= @order.pu_dt_type %>
+  </li>
+
+  <li>
+    <strong>Dl dt type:</strong>
+    <%= @order.dl_dt_type %>
+  </li>
+
+  <li>
+    <strong>Comment:</strong>
+    <%= @order.comment %>
+  </li>
+
+  <li>
+    <strong>Instruction:</strong>
+    <%= @order.instruction %>
+  </li>
+
+  <li>
+    <strong>Cod:</strong>
+    <%= @order.cod %>
+  </li>
+
+  <li>
+    <strong>Dv:</strong>
+    <%= @order.dv %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.order_show_path(@socket, :edit, @order), class: "button" %></span> |
+<span><%= live_redirect "Back", to: Routes.order_index_path(@socket, :index) %></span>
